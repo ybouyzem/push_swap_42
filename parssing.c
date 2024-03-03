@@ -6,49 +6,51 @@
 /*   By: ybouyzem <ybouyzem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/28 11:04:57 by ybouyzem          #+#    #+#             */
-/*   Updated: 2024/03/01 11:55:07 by ybouyzem         ###   ########.fr       */
+/*   Updated: 2024/03/02 23:27:10 by ybouyzem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void check_duplication(char **str)
+void check_duplication(int argc, char **str)
 {
     int i;
     int j;
     
     i = 0;
+    if (argc == 2 && (ft_atoi(str[0]) < -2147483648 || ft_atoi(str[0]) > 2147483647))
+        return (ft_error());
     while (str[i])
     {
         j = i + 1;
         while (str[j])
         {
-            if ((ft_atoi(str[i]) == ft_atoi(str[j])) || (ft_atoi(str[i]) < -214748368 || ft_atoi(str[i]) > 214748367))
-                ft_error();
+            if ((ft_atoi(str[i]) == ft_atoi(str[j])) || (ft_atoi(str[i]) < -2147483648 || ft_atoi(str[i]) > 2147483647))
+                return (ft_error());
             j++;
         }
         i++;
     }
 }
 
-void check_empty(char **args)
+void check_empty(char **argv)
 {
     int i;
     int j;
     int space;
 
     i = 1;
-    while (args[i])
+    while (argv[i])
     {
         j = 0;
         space = 0;
-        while (args[i][j])
+        while (argv[i][j])
         {
-            if (ft_isdigit(args[i][j]))
+            if (ft_isdigit(argv[i][j]))
                 space = 1;
             j++; 
         }
-        if (space == 0 || args[i][0] == '\0')
+        if (space == 0 || argv[i][0] == '\0')
             ft_error();
         i++;
     }
@@ -86,8 +88,9 @@ void check(int argc, char **argv)
     i = 0;
 
     array = ft_get_array(argc, argv);
-    check_duplication(array);
     check_empty(argv);
+    check_duplication(argc, array);
+    //check_empty(argv);
     while (array[i])
     {
         j = 0;

@@ -6,7 +6,7 @@
 /*   By: ybouyzem <ybouyzem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/28 10:53:45 by ybouyzem          #+#    #+#             */
-/*   Updated: 2024/03/02 12:14:28 by ybouyzem         ###   ########.fr       */
+/*   Updated: 2024/03/03 01:06:02 by ybouyzem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,8 @@ int main(int argc, char **argv)
         return (0);
     ft_full_stack(argc, argv, &a);
     indexing(&a);
-
+    sort(&a, &b);
+    //ft_print_stack(a);
     
-    //leaks();
+    //atexit(leaks);
 }

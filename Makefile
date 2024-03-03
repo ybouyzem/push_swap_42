@@ -6,7 +6,7 @@
 #    By: ybouyzem <ybouyzem@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/02/28 10:54:16 by ybouyzem          #+#    #+#              #
-#    Updated: 2024/03/02 12:05:17 by ybouyzem         ###   ########.fr        #
+#    Updated: 2024/03/02 23:41:19 by ybouyzem         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,9 +19,9 @@ LIBFT := libft/ft_isalpha.c libft/ft_isdigit.c libft/ft_isalnum.c libft/ft_isasc
 
 MOVES := moves/push.c moves/reverse_rotate.c moves/reverse.c moves/swap.c
 
-SORTING := sorting/sort.c
+SORTING := sorting/sort.c sorting/sort_utils.c
 
-C_FILES := push_swap.c utils.c parssing.c $(LIBFT) $(MOVES) \
+C_FILES := push_swap.c utils.c parssing.c $(LIBFT) $(MOVES) $(SORTING)\
 
 OBJS := $(C_FILES:.c=.o)
 

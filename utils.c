@@ -6,7 +6,7 @@
 /*   By: ybouyzem <ybouyzem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/28 11:05:40 by ybouyzem          #+#    #+#             */
-/*   Updated: 2024/03/02 12:25:54 by ybouyzem         ###   ########.fr       */
+/*   Updated: 2024/03/03 01:08:59 by ybouyzem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ void ft_full_stack(int argc, char **argv, t_list **s)
     int i;
     t_list *new;
 
-    i = 1;
+    i = 0;
     array = ft_get_array(argc, argv);
     while (array[i])
     {
@@ -65,7 +65,7 @@ void indexing(t_list **s)
     int max_v;
 
     tmp = NULL;
-    index = ft_lstsize(*s);
+    index = ft_lstsize(*s) - 1;
     while (index)
     {
         tmp = *s;

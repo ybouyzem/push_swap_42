@@ -6,7 +6,7 @@
 /*   By: ybouyzem <ybouyzem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/02 11:21:36 by ybouyzem          #+#    #+#             */
-/*   Updated: 2024/03/02 12:26:50 by ybouyzem         ###   ########.fr       */
+/*   Updated: 2024/03/03 01:25:59 by ybouyzem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int get_higher_index(t_list *s)
     {
         if (tmp->index > higher)
             higher = tmp->index;
-        tmp = tmp->index;
+        tmp = tmp->next;
     }
     return (higher);
 }
@@ -56,6 +56,7 @@ void sort5(t_list **a, t_list **b)
     i = 0;
     pushed = 0;
     size = ft_lstsize(*a);
+
     while ((size - pushed) > 3 && i < size)
     {
         if ((*a)->index < 2)
@@ -72,4 +73,22 @@ void sort5(t_list **a, t_list **b)
         rb(b);
     pa(a, b);
     pa(a, b);
+}
+
+void sort(t_list **a, t_list **b)
+{
+    if (ft_lstsize(*a) == 2)
+        sort2(a);
+    else if (ft_lstsize(*a) == 3)
+        sort3(a);
+    else if (ft_lstsize(*a) == 5)
+        sort5(a, b);
+    else
+    {
+        if (ft_lstsize(*a) <= 100)
+            push_a_to_b(a, b, 10);
+        else if (ft_lstsize(*a) >= 100)
+            push_a_to_b(a, b, 30);
+        turn_to_a(a, b);
+    }
 }
