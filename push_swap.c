@@ -6,7 +6,7 @@
 /*   By: ybouyzem <ybouyzem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/28 10:53:45 by ybouyzem          #+#    #+#             */
-/*   Updated: 2024/03/03 03:51:20 by ybouyzem         ###   ########.fr       */
+/*   Updated: 2024/03/03 16:17:58 by ybouyzem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,20 @@ void	ft_error(void)
 	exit(1);
 }
 
+void	ft_free_stack(t_list *s)
+{
+	t_list	*tmp;
+	t_list	*to_free;
+
+	tmp = s;
+	while (tmp)
+	{
+		to_free = tmp;
+		free(to_free);
+		tmp = tmp->next;
+	}
+}
+
 int	main(int argc, char **argv)
 {
 	t_list	*a;
@@ -50,4 +64,5 @@ int	main(int argc, char **argv)
 	ft_full_stack(argc, argv, &a);
 	indexing(&a);
 	sort(&a, &b);
+	ft_free_stack(a);
 }

@@ -6,7 +6,7 @@
 /*   By: ybouyzem <ybouyzem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/02 11:21:36 by ybouyzem          #+#    #+#             */
-/*   Updated: 2024/03/03 04:38:30 by ybouyzem         ###   ########.fr       */
+/*   Updated: 2024/03/03 15:50:40 by ybouyzem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,12 +28,6 @@ int	get_higher_index(t_list *s)
 	return (higher);
 }
 
-void	sort2(t_list **a)
-{
-	if ((*a)->content > (*a)->next->content)
-		sa(a);
-}
-
 void	sort3(t_list **a)
 {
 	int	higher;
@@ -45,6 +39,30 @@ void	sort3(t_list **a)
 		rra(a);
 	if ((*a)->content > (*a)->next->content)
 		sa(a);
+}
+
+void	sort4(t_list **a, t_list **b)
+{
+	int	i;
+	int	pushed;
+	int	size;
+
+	i = 0;
+	pushed = 0;
+	size = ft_lstsize(*a);
+	while ((size - pushed) > 3 && i < size)
+	{
+		if ((*a)->index < 1)
+		{
+			pb(a, b);
+			pushed++;
+		}
+		else
+			ra(a);
+		i++;
+	}
+	sort3(a);
+	pa(a, b);
 }
 
 void	sort5(t_list **a, t_list **b)
@@ -77,9 +95,14 @@ void	sort5(t_list **a, t_list **b)
 void	sort(t_list **a, t_list **b)
 {
 	if (ft_lstsize(*a) == 2)
-		sort2(a);
+	{
+		if ((*a)->content > (*a)->next->content)
+			sa(a);
+	}
 	else if (ft_lstsize(*a) == 3)
 		sort3(a);
+	else if (ft_lstsize(*a) == 4)
+		sort4(a, b);
 	else if (ft_lstsize(*a) == 5)
 		sort5(a, b);
 	else

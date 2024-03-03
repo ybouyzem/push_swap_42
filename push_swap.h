@@ -6,14 +6,14 @@
 /*   By: ybouyzem <ybouyzem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/28 10:51:05 by ybouyzem          #+#    #+#             */
-/*   Updated: 2024/03/03 03:35:33 by ybouyzem         ###   ########.fr       */
+/*   Updated: 2024/03/03 15:37:57 by ybouyzem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
-# include "libft/libft.h"
+# include "libft_42/libft.h"
 # include <unistd.h>
 # include <stdlib.h>
 # include <limits.h>

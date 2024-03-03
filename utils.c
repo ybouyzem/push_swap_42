@@ -6,7 +6,7 @@
 /*   By: ybouyzem <ybouyzem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/28 11:05:40 by ybouyzem          #+#    #+#             */
-/*   Updated: 2024/03/03 04:32:16 by ybouyzem         ###   ########.fr       */
+/*   Updated: 2024/03/03 15:41:01 by ybouyzem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,7 +90,7 @@ int	check_stack_sort(t_list *s)
 	t_list	*tmp;
 
 	tmp = s;
-	while (tmp)
+	while (tmp->next)
 	{
 		if (tmp->content > tmp->next->content)
 			return (0);
