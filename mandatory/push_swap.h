@@ -6,14 +6,14 @@
 /*   By: ybouyzem <ybouyzem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/28 10:51:05 by ybouyzem          #+#    #+#             */
-/*   Updated: 2024/03/03 15:37:57 by ybouyzem         ###   ########.fr       */
+/*   Updated: 2024/03/05 02:20:20 by ybouyzem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
-# include "libft_42/libft.h"
+# include "../libft_42/libft.h"
 # include <unistd.h>
 # include <stdlib.h>
 # include <limits.h>
@@ -41,7 +41,7 @@ void	ss(t_list **a, t_list **b);
 void	push(t_list **dest, t_list **src);
 void	pa(t_list **a, t_list **b);
 void	pb(t_list **a, t_list **b);
-void	reverse(t_list **s);
+void	rotate(t_list **s);
 void	ra(t_list **a);
 void	rb(t_list **b);
 void	rr(t_list **a, t_list **b);

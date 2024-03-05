@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   parssing.c                                         :+:      :+:    :+:   */
+/*   parssing_bonus.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ybouyzem <ybouyzem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/28 11:04:57 by ybouyzem          #+#    #+#             */
-/*   Updated: 2024/03/04 23:04:02 by ybouyzem         ###   ########.fr       */
+/*   Updated: 2024/03/05 02:47:32 by ybouyzem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "checker.h"
 
 void	check_duplication(int argc, char **str)
 {

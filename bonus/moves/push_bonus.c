@@ -1,36 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   checker.c                                          :+:      :+:    :+:   */
+/*   push_bonus.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ybouyzem <ybouyzem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/04 00:07:51 by ybouyzem          #+#    #+#             */
-/*   Updated: 2024/03/05 01:27:23 by ybouyzem         ###   ########.fr       */
+/*   Created: 2024/03/01 19:24:15 by ybouyzem          #+#    #+#             */
+/*   Updated: 2024/03/05 01:38:32 by ybouyzem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "checker.h"
+#include "../checker.h"
 
-int main(int argc, char **argv)
+void	push(t_list **dest, t_list **src)
 {
-    t_list	*a;
-	t_list	*b;
-	char *str;
+	t_list	*to_push;
 
-	a = NULL;
-	b = NULL;
-	if (argc == 1)
-		return (0);
-	check(argc, argv);
-	if (argc > 1)
-	{
-		while (argc > 1)
-		{
-			str = get_next_line(0);
-			if (!str)
-				return 0;
-			ft_check_moves(str);			
-		}
-	}
+	to_push = *src;
+	if (*src == NULL)
+		return ;
+	*src = (*src)->next;
+	to_push->next = NULL;
+	ft_lstadd_front(dest, to_push);
+}
+
+void	pa(t_list **a, t_list **b)
+{
+	write(1, "pa\n", 3);
+	push(a, b);
+}
+
+void	pb(t_list **a, t_list **b)
+{
+	write(1, "pb\n", 3);
+	push(b, a);
 }

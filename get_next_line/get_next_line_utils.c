@@ -6,13 +6,13 @@
 /*   By: ybouyzem <ybouyzem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/21 11:54:02 by ybouyzem          #+#    #+#             */
-/*   Updated: 2023/12/07 20:19:04 by ybouyzem         ###   ########.fr       */
+/*   Updated: 2024/03/05 02:23:22 by ybouyzem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
-size_t	ft_strlen(char *str)
+size_t	ft_strlength(char *str)
 {
 	size_t	i;
 
@@ -30,7 +30,7 @@ void	ft_strcpy(char *dst, char *src)
 	if (!dst || !src)
 		return ;
 	i = 0;
-	srclen = ft_strlen(src);
+	srclen = ft_strlength(src);
 	while (i < srclen)
 	{
 		dst[i] = src[i];
@@ -47,7 +47,7 @@ void	ft_strcat(char *s1, char *s2)
 	if (!s1 || !s2)
 		return ;
 	i = 0;
-	s1len = ft_strlen(s1);
+	s1len = ft_strlength(s1);
 	while (s2[i])
 	{
 		s1[s1len] = s2[i];
@@ -63,7 +63,7 @@ char	*ft_strdup(char	*str)
 	size_t	i;
 	char	*result;
 
-	l = ft_strlen(str);
+	l = ft_strlength(str);
 	result = (char *)malloc((size_t)l + 1);
 	if (!result)
 		return (NULL);
@@ -88,7 +88,7 @@ char	*ft_strjoin(char *s1, char *s2)
 		return (ft_strdup(s2));
 	else if (!s2)
 		return (ft_strdup(s1));
-	len = ft_strlen(s1) + ft_strlen(s2);
+	len = ft_strlength(s1) + ft_strlength(s2);
 	result = (char *)malloc(len + 1);
 	if (!result)
 		return (NULL);

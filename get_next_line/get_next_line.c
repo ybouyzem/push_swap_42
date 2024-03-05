@@ -6,7 +6,7 @@
 /*   By: ybouyzem <ybouyzem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/21 11:54:08 by ybouyzem          #+#    #+#             */
-/*   Updated: 2023/12/07 20:18:32 by ybouyzem         ###   ########.fr       */
+/*   Updated: 2024/03/05 02:22:29 by ybouyzem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,7 @@ char	*get_reminder(char *buf)
 		return (free(buf), NULL);
 	if (buf[i] == '\n')
 		i++;
-	new = (char *)malloc(sizeof(char) * (ft_strlen(buf) - i + 1));
+	new = (char *)malloc(sizeof(char) * (ft_strlength(buf) - i + 1));
 	if (!new)
 		return (free(buf), NULL);
 	j = 0;
