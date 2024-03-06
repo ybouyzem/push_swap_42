@@ -6,7 +6,7 @@
 /*   By: ybouyzem <ybouyzem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/01 19:24:15 by ybouyzem          #+#    #+#             */
-/*   Updated: 2024/03/05 01:38:32 by ybouyzem         ###   ########.fr       */
+/*   Updated: 2024/03/05 23:06:47 by ybouyzem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,12 +26,10 @@ void	push(t_list **dest, t_list **src)
 
 void	pa(t_list **a, t_list **b)
 {
-	write(1, "pa\n", 3);
 	push(a, b);
 }
 
 void	pb(t_list **a, t_list **b)
 {
-	write(1, "pb\n", 3);
 	push(b, a);
 }

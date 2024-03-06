@@ -6,7 +6,7 @@
 /*   By: ybouyzem <ybouyzem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/01 19:12:19 by ybouyzem          #+#    #+#             */
-/*   Updated: 2024/03/05 01:38:24 by ybouyzem         ###   ########.fr       */
+/*   Updated: 2024/03/05 23:06:33 by ybouyzem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,19 +34,16 @@ void	swap(t_list **s)
 
 void	sa(t_list **a)
 {
-	write(1, "sa\n", 3);
 	swap(a);
 }
 
 void	sb(t_list **b)
 {
-	write(1, "sb\n", 3);
 	swap(b);
 }
 
 void	ss(t_list **a, t_list **b)
 {
-	write(1, "ss\n", 3);
 	sa(a);
 	sb(b);
 }

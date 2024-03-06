@@ -6,7 +6,7 @@
 /*   By: ybouyzem <ybouyzem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/28 10:53:45 by ybouyzem          #+#    #+#             */
-/*   Updated: 2024/03/03 16:17:58 by ybouyzem         ###   ########.fr       */
+/*   Updated: 2024/03/06 01:53:01 by ybouyzem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,17 +17,17 @@ void	leaks(void)
 	system("leaks push_swap");
 }
 
-void	ft_print_stack(t_list *a)
-{
-	t_list	*tmp;
+// void	ft_print_stack(t_list *a)
+// {
+// 	t_list	*tmp;
 
-	tmp = a;
-	while (tmp)
-	{
-		printf("Index : %d ==> %d\n", tmp->index, (int)tmp->content);
-		tmp = tmp->next;
-	}
-}
+// 	tmp = a;
+// 	while (tmp)
+// 	{
+// 		printf("Index : %d ==> %d\n", tmp->index, (int)tmp->content);
+// 		tmp = tmp->next;
+// 	}
+// }
 
 void	ft_error(void)
 {

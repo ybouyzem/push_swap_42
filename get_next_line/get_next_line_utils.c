@@ -6,7 +6,7 @@
 /*   By: ybouyzem <ybouyzem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/21 11:54:02 by ybouyzem          #+#    #+#             */
-/*   Updated: 2024/03/05 02:23:22 by ybouyzem         ###   ########.fr       */
+/*   Updated: 2024/03/05 21:49:28 by ybouyzem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,7 @@ void	ft_strcat(char *s1, char *s2)
 	s1[s1len] = '\0';
 }
 
-char	*ft_strdup(char	*str)
+char	*ft_stringdup(char	*str)
 {
 	size_t	l;
 	size_t	i;
@@ -77,7 +77,7 @@ char	*ft_strdup(char	*str)
 	return (result);
 }
 
-char	*ft_strjoin(char *s1, char *s2)
+char	*ft_stringjoin(char *s1, char *s2)
 {
 	size_t	len;
 	char	*result;
@@ -85,9 +85,9 @@ char	*ft_strjoin(char *s1, char *s2)
 	if (!s1 && !s2)
 		return (NULL);
 	else if (!s1)
-		return (ft_strdup(s2));
+		return (ft_stringdup(s2));
 	else if (!s2)
-		return (ft_strdup(s1));
+		return (ft_stringdup(s1));
 	len = ft_strlength(s1) + ft_strlength(s2);
 	result = (char *)malloc(len + 1);
 	if (!result)

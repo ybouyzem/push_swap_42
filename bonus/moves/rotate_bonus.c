@@ -6,7 +6,7 @@
 /*   By: ybouyzem <ybouyzem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/02 10:39:55 by ybouyzem          #+#    #+#             */
-/*   Updated: 2024/03/05 01:38:20 by ybouyzem         ###   ########.fr       */
+/*   Updated: 2024/03/05 23:06:26 by ybouyzem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,19 +27,16 @@ void	rotate(t_list **s)
 
 void	ra(t_list **a)
 {
-	write(1, "ra\n", 3);
 	rotate(a);
 }
 
 void	rb(t_list **b)
 {
-	write(1, "rb\n", 3);
 	rotate(b);
 }
 
 void	rr(t_list **a, t_list **b)
 {
-	write(1, "rr\n", 3);
 	ra(a);
 	rb(b);
 }

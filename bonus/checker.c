@@ -6,31 +6,53 @@
 /*   By: ybouyzem <ybouyzem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/04 00:07:51 by ybouyzem          #+#    #+#             */
-/*   Updated: 2024/03/05 01:27:23 by ybouyzem         ###   ########.fr       */
+/*   Updated: 2024/03/06 02:13:50 by ybouyzem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "checker.h"
 
-int main(int argc, char **argv)
+void	ft_error(void)
 {
-    t_list	*a;
+	write(2, "Error\n", 6);
+	exit(1);
+}
+
+void	check_instructions(t_list **a, t_list **b)
+{
+	if (check_stack_sort(*a))
+		write(1, "OK\n", 3);
+	else
+		write(1, "KO\n", 3);
+	ft_free_stack(*a);
+	ft_free_stack(*b);
+}
+
+int	main(int argc, char **argv)
+{
+	t_list	*a;
 	t_list	*b;
-	char *str;
+	char	*str;
 
 	a = NULL;
 	b = NULL;
 	if (argc == 1)
 		return (0);
 	check(argc, argv);
+	ft_full_stack(argc, argv, &a);
 	if (argc > 1)
 	{
 		while (argc > 1)
 		{
 			str = get_next_line(0);
 			if (!str)
-				return 0;
-			ft_check_moves(str);			
+			{
+				free(str);
+				break ;
+			}
+			ft_check_moves(str, &a, &b);
+			free(str);
 		}
+		check_instructions(&a, &b);
 	}
 }
