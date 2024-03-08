@@ -6,7 +6,7 @@
 /*   By: ybouyzem <ybouyzem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/04 00:07:51 by ybouyzem          #+#    #+#             */
-/*   Updated: 2024/03/06 02:13:50 by ybouyzem         ###   ########.fr       */
+/*   Updated: 2024/03/08 22:43:41 by ybouyzem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void	ft_error(void)
 
 void	check_instructions(t_list **a, t_list **b)
 {
-	if (check_stack_sort(*a))
+	if (check_stack_sort(*a) && ft_lstsize(*b) == 0)
 		write(1, "OK\n", 3);
 	else
 		write(1, "KO\n", 3);
@@ -36,6 +36,8 @@ int	main(int argc, char **argv)
 
 	a = NULL;
 	b = NULL;
+	if (read(0, NULL, 0) < 0)
+		ft_error();
 	if (argc == 1)
 		return (0);
 	check(argc, argv);

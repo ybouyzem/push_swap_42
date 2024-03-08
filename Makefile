@@ -6,7 +6,7 @@
 #    By: ybouyzem <ybouyzem@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/02/28 10:54:16 by ybouyzem          #+#    #+#              #
-#    Updated: 2024/03/05 23:11:38 by ybouyzem         ###   ########.fr        #
+#    Updated: 2024/03/08 21:25:56 by ybouyzem         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -39,13 +39,13 @@ HEADER = mandatory/push_swap.h libft_42/libft.h
 
 
 $(NAME) : $(OBJS)
-	@cc -Wall -Wextra -Werror $(OBJS) -o push_swap
+	@cc -Wall -Wextra -Werror -fsanitize=address $(OBJS) -o push_swap
 
 $(NAME_BONUS) : $(OBJS_BONUS) 
-	@cc -Wall -Wextra -Werror $(OBJS_BONUS) -o checker
+	@cc -Wall -Wextra -Werror -fsanitize=address $(OBJS_BONUS) -o checker
 
 %.o : %.c mandatory/push_swap.h bonus/checker.h
-	@cc -Wall -Wextra -Werror  -o $@ -c $<
+	@cc -Wall -Wextra -Werror -fsanitize=address  -o $@ -c $<
 
 all : $(NAME)
 

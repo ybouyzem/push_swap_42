@@ -6,7 +6,7 @@
 /*   By: ybouyzem <ybouyzem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/05 01:12:41 by ybouyzem          #+#    #+#             */
-/*   Updated: 2024/03/06 02:17:17 by ybouyzem         ###   ########.fr       */
+/*   Updated: 2024/03/08 22:42:16 by ybouyzem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int	ft_strcmp(char *s1, char *s2)
 	int	i;
 
 	if (!s1 || !s2)
-		reuturn (NULL);
+		return (0);
 	i = 0;
 	while (s1[i] && s2[i] && s1[i] == s2[i])
 		i++;
@@ -61,7 +61,7 @@ void	ft_free_stack(t_list *s)
 	while (tmp)
 	{
 		to_free = tmp;
-		free(to_free);
 		tmp = tmp->next;
+		free(to_free);
 	}
 }

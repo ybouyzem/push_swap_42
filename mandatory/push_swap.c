@@ -6,7 +6,7 @@
 /*   By: ybouyzem <ybouyzem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/28 10:53:45 by ybouyzem          #+#    #+#             */
-/*   Updated: 2024/03/06 01:53:01 by ybouyzem         ###   ########.fr       */
+/*   Updated: 2024/03/08 22:31:40 by ybouyzem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,8 +44,8 @@ void	ft_free_stack(t_list *s)
 	while (tmp)
 	{
 		to_free = tmp;
-		free(to_free);
 		tmp = tmp->next;
+		free(to_free);
 	}
 }
 
