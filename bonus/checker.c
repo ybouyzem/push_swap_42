@@ -6,7 +6,7 @@
 /*   By: ybouyzem <ybouyzem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/04 00:07:51 by ybouyzem          #+#    #+#             */
-/*   Updated: 2024/03/08 22:43:41 by ybouyzem         ###   ########.fr       */
+/*   Updated: 2024/03/08 23:01:02 by ybouyzem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,12 +34,10 @@ int	main(int argc, char **argv)
 	t_list	*b;
 	char	*str;
 
-	a = NULL;
-	b = NULL;
-	if (read(0, NULL, 0) < 0)
-		ft_error();
 	if (argc == 1)
 		return (0);
+	if (read(0, NULL, 0) < 0)
+		ft_error();
 	check(argc, argv);
 	ft_full_stack(argc, argv, &a);
 	if (argc > 1)

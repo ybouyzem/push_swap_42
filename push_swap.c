@@ -6,28 +6,11 @@
 /*   By: ybouyzem <ybouyzem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/28 10:53:45 by ybouyzem          #+#    #+#             */
-/*   Updated: 2024/03/08 22:31:40 by ybouyzem         ###   ########.fr       */
+/*   Updated: 2024/03/08 22:55:12 by ybouyzem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-void	leaks(void)
-{
-	system("leaks push_swap");
-}
-
-// void	ft_print_stack(t_list *a)
-// {
-// 	t_list	*tmp;
-
-// 	tmp = a;
-// 	while (tmp)
-// 	{
-// 		printf("Index : %d ==> %d\n", tmp->index, (int)tmp->content);
-// 		tmp = tmp->next;
-// 	}
-// }
 
 void	ft_error(void)
 {

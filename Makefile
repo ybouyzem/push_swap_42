@@ -6,7 +6,7 @@
 #    By: ybouyzem <ybouyzem@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/02/28 10:54:16 by ybouyzem          #+#    #+#              #
-#    Updated: 2024/03/08 21:25:56 by ybouyzem         ###   ########.fr        #
+#    Updated: 2024/03/09 23:31:46 by ybouyzem         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,13 +19,13 @@ LIBFT = libft_42/ft_isalpha.c libft_42/ft_isdigit.c libft_42/ft_isalnum.c libft_
 
 GET_NEXT_LINE = get_next_line/get_next_line.c get_next_line/get_next_line_utils.c \
 
-MOVES = mandatory/moves/push.c mandatory/moves/reverse_rotate.c mandatory/moves/rotate.c mandatory/moves/swap.c \
+MOVES = moves/push.c moves/reverse_rotate.c moves/rotate.c moves/swap.c \
 
 MOVES_BONUS = bonus/moves/push_bonus.c bonus/moves/reverse_rotate_bonus.c bonus/moves/rotate_bonus.c bonus/moves/swap_bonus.c \
 
-SORTING = mandatory/sorting/sort.c mandatory/sorting/sort_utils.c
+SORTING = sorting/sort.c sorting/sort_utils.c
 
-C_FILES =  mandatory/push_swap.c mandatory/utils.c mandatory/parssing.c $(LIBFT) $(MOVES) $(SORTING) \
+C_FILES =  push_swap.c utils.c parssing.c $(LIBFT) $(MOVES) $(SORTING) \
 
 C_BONUS = bonus/checker.c $(GET_NEXT_LINE) $(MOVES_BONUS) $(LIBFT) bonus/parssing_bonus.c  bonus/parssing_utils_bonus.c \
 	bonus/utils_bonus.c
@@ -35,27 +35,28 @@ OBJS_BONUS = $(C_BONUS:.c=.o)
 
 NAME = push_swap
 NAME_BONUS = checker
-HEADER = mandatory/push_swap.h libft_42/libft.h 
-
 
 $(NAME) : $(OBJS)
-	@cc -Wall -Wextra -Werror -fsanitize=address $(OBJS) -o push_swap
+	cc -Wall -Wextra -Werror $(OBJS) -o push_swap
 
 $(NAME_BONUS) : $(OBJS_BONUS) 
-	@cc -Wall -Wextra -Werror -fsanitize=address $(OBJS_BONUS) -o checker
+	cc -Wall -Wextra -Werror $(OBJS_BONUS) -o checker
 
-%.o : %.c mandatory/push_swap.h bonus/checker.h
-	@cc -Wall -Wextra -Werror -fsanitize=address  -o $@ -c $<
+bonus/%.o : bonus/%.c bonus/checker.h
+	cc -Wall -Wextra -Werror -c $< -o $@
+
+%.o : %.c push_swap.h
+	cc -Wall -Wextra -Werror -c $< -o $@
 
 all : $(NAME)
 
 bonus : $(NAME_BONUS)
 
 clean :
-	@rm -f $(OBJS) $(OBJS_BONUS)
+	rm -f $(OBJS) $(OBJS_BONUS)
 
 fclean : clean
-	@rm -f $(NAME) $(NAME_BONUS)
+	rm -f $(NAME) $(NAME_BONUS)
 	
 re : fclean all
 

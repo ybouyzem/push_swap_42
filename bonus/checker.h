@@ -6,7 +6,7 @@
 /*   By: ybouyzem <ybouyzem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/04 00:08:09 by ybouyzem          #+#    #+#             */
-/*   Updated: 2024/03/06 02:19:23 by ybouyzem         ###   ########.fr       */
+/*   Updated: 2024/03/09 23:22:58 by ybouyzem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,15 +15,13 @@
 
 # include "../get_next_line/get_next_line.h"
 # include "../libft_42/libft.h"
-# include <unistd.h>
-# include <stdlib.h>
 # include <limits.h>
 
 void	ft_error(void);
 char	**ft_get_array(int argc, char **argv);
 void	check(int argc, char **argv);
 void	check_empty(char **argv);
-void	check_duplication(int argc, char **str);
+void	check_duplication(char **str);
 void	ft_myfree(char **result);
 int		check_sort(int argc, char **argv);
 void	ft_full_stack(int argc, char **argv, t_list **s);

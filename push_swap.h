@@ -6,25 +6,22 @@
 /*   By: ybouyzem <ybouyzem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/28 10:51:05 by ybouyzem          #+#    #+#             */
-/*   Updated: 2024/03/05 02:20:20 by ybouyzem         ###   ########.fr       */
+/*   Updated: 2024/03/09 23:27:34 by ybouyzem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
-# include "../libft_42/libft.h"
-# include <unistd.h>
-# include <stdlib.h>
+# include "libft_42/libft.h"
 # include <limits.h>
-# include <stdio.h>
 
 int		main(int argc, char **argv);
 void	ft_error(void);
 char	**ft_get_array(int argc, char **argv);
 void	check(int argc, char **argv);
 void	check_empty(char **argv);
-void	check_duplication(int argc, char **str);
+void	check_duplication(char **str);
 void	ft_myfree(char **result);
 int		check_sort(int argc, char **argv);
 void	ft_full_stack(int argc, char **argv, t_list **s);
@@ -49,6 +46,4 @@ void	reverse_rotate(t_list **s);
 void	rra(t_list **a);
 void	rrb(t_list **b);
 void	rrr(t_list **a, t_list **b);
-//tmp
-void	ft_print_stack(t_list *a);
 #endif

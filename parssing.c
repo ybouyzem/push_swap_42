@@ -6,20 +6,19 @@
 /*   By: ybouyzem <ybouyzem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/28 11:04:57 by ybouyzem          #+#    #+#             */
-/*   Updated: 2024/03/04 23:04:02 by ybouyzem         ###   ########.fr       */
+/*   Updated: 2024/03/09 23:20:48 by ybouyzem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	check_duplication(int argc, char **str)
+void	check_duplication(char **str)
 {
 	int	i;
 	int	j;
 
 	i = 0;
-	if (argc == 2 && (ft_atoi(str[0]) < -2147483648
-			|| ft_atoi(str[0]) > 2147483647))
+	if (ft_atoi(str[0]) < -2147483648 || ft_atoi(str[0]) > 2147483647)
 		return (ft_error());
 	while (str[i])
 	{
@@ -91,7 +90,7 @@ void	check(int argc, char **argv)
 	i = 0;
 	array = ft_get_array(argc, argv);
 	check_empty(argv);
-	check_duplication(argc, array);
+	check_duplication(array);
 	while (array[i])
 	{
 		j = 0;
