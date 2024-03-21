@@ -108,9 +108,9 @@ void	sort(t_list **a, t_list **b)
 	else
 	{
 		if (ft_lstsize(*a) <= 100)
-			push_a_to_b(a, b, 10);
+			push_a_to_b(a, b, 15);
 		else if (ft_lstsize(*a) >= 100)
-			push_a_to_b(a, b, 30);
+			push_a_to_b(a, b, 35);
 		turn_to_a(a, b);
 	}
 }
